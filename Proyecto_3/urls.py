@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from mascotas.views import crear_mascota, crear_responsable, listar_mascotas, listar_responsable, modificar_mascota, modificar_responsable, eliminar_responsable, eliminar_mascota
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('mascota/crear',crear_mascota),
+    path('mascotas', listar_mascotas),
+    path('mascota/modificar/<id>',modificar_mascota),
+    path('mascota/eliminar/<id>',eliminar_mascota),
+    path('responsable/crear',crear_responsable),
+    path('responsables',listar_responsable),
+    path('responsable/modificar/<id>',modificar_responsable),
+    path('responsable/eliminar/<id>',eliminar_responsable),
 ]
